@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="utf-8"?>
+<web-app xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+xmlns="http://java.sun.com/xml/ns/javaee"
+xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
+xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
+http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
+	<servlet>
+		<servlet-name>EventGo</servlet-name>
+		<servlet-class>com.efrei.eventGo.EventGoServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>EventGo</servlet-name>
+		<url-pattern>/eventgo</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>MySQL</servlet-name>
+		<servlet-class>com.efrei.eventGo.MySQLServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>MySQL</servlet-name>
+		<url-pattern>/mysql</url-pattern>
+	</servlet-mapping>
+
+	<servlet>
+		<servlet-name>NoSQLServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.NoSQLServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>NoSQLServlet</servlet-name>
+		<url-pattern>/nosql</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>GetEventsServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.GetEventsServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>GetEventsServlet</servlet-name>
+		<url-pattern>/getevents</url-pattern>
+	</servlet-mapping>
+	
+	<welcome-file-list>
+		<welcome-file>index.html</welcome-file>
+	</welcome-file-list>
+</web-app>
