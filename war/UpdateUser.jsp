@@ -55,10 +55,10 @@ String nuid = request.getParameter("nuid");
 					  </div>
 					  <div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.jsp">Home</a></li>
+							<li><a href="index.jsp">Home</a></li>
 							<li><a href="about.jsp">About</a></li>
 							<li><a href="contact.jsp">Contact</a></li>
-                            <li><a href="<%=url%>">Manage</a></li>
+                            <li class="active"><a href="<%=url%>">Manage</a></li>
 						</ul>
 					  </div>
 				  </div>

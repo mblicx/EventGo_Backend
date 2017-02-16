@@ -6,10 +6,8 @@
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <%
-
 String nuid = request.getParameter("nuid");
 String uid = request.getParameter("uid");
-
 String url="";
 String url1="ManageEvents.jsp?uid=";
 String url2="ShowEvent.jsp?uid=";
@@ -82,10 +80,10 @@ if(uid.equals("1")){
 					  </div>
 					  <div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.jsp">Home</a></li>
+							<li><a href="index.jsp">Home</a></li>
 							<li><a href="about.jsp">About</a></li>
 							<li><a href="contact.jsp">Contact</a></li>
-                            <li><a href="<%=url%>">Manage</a></li>
+                            <li class="active"><a href="<%=url%>">Manage</a></li>
 						</ul>
 					  </div>
 				  </div>
@@ -102,18 +100,18 @@ if(uid.equals("1")){
 		  </div>
 	  </div>
   </section>
-  
-<sql:setDataSource var="snapshot" driver="com.mysql.jdbc.GoogleDriver"
-     url="jdbc:google:mysql://eventgo-161225:europe-west1:eventgosql/eventgo"
-     user="root"  password="kid1412"/>
- 
-<sql:update dataSource="${snapshot}" var="count">
-  DELETE FROM user WHERE user_id = ?;
+
+	<sql:setDataSource var="snapshot" driver="com.mysql.jdbc.GoogleDriver"
+		url="jdbc:google:mysql://eventgo-161225:europe-west1:eventgosql/eventgo"
+		user="root" password="kid1412" />
+
+	<sql:update dataSource="${snapshot}" var="count">
+  	DELETE FROM user WHERE user_id = ?;
   <sql:param value="<%=nuid %>" />
 </sql:update>
 
 <sql:query dataSource="${snapshot}" var="result2">
-SELECT * from user;
+	SELECT * from user;
 </sql:query>
 
 <section class="contact-w3ls">
