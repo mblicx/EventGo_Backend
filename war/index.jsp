@@ -1,10 +1,10 @@
 <!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
-<!-- The HTML 4.01 Transitional DOCTYPE declaration-->
-<!-- above set at the top of the file will set     -->
-<!-- the browser's rendering engine into           -->
-<!-- "Quirks Mode". Replacing this declaration     -->
-<!-- with a "Standards Mode" doctype is supported, -->
-<!-- but may lead to some differences in layout.   -->
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 
 <html>
 
@@ -40,12 +40,13 @@
 		  <div class="container">
 			  <div class="row">
 				  <div class="col-lg-7 col-md-7 top-w3ls1">
-					  <p class="top-p1">Find events surrounding you(随便写写标语什么的)</p>
+					  <p class="top-p1">Find events surrounding you</p>
 				  </div>
 				  <div class="col-lg-5 col-md-5 top-w3ls2">
 					  <ul class="top-contacts">
 						  <li class="top-hover"><p><span class="glyphicon glyphicon-envelope"></span> <a href="mailto:support@company.com">service@eventgo.com</a></p>
 						  <li class="top-unhover"><p><span class="glyphicon glyphicon-phone-alt"></span> +33 665111111</p>
+						  <li><p><span class="glyphicon glyphicon-envelope"></span><a href="login.jsp">LOGIN</a></p>
 					  </ul>
 				  </div>
 			  </div>
@@ -67,16 +68,12 @@
 						  <a class="navbar-brand" href="index.html"><h1>Event-Go</h1></a>
 					  </div>
 					  <div id="navbar" class="navbar-collapse collapse">
-						  <ul class="nav navbar-nav">
-							  <li class="active"><a href="index.html">Home</a></li>
-							  <li><a href="about.html">About</a></li>
-							  <li><a href="eventgo">EventGo</a></li>
-							  <li><a href="mysql">MySQL</a></li>
-							  <li><a href="test">Test</a></li>
-							  <li><a href="blog.html">Blog</a></li>
-							  <li><a href="contact.html">Contact</a></li>
-
-						  </ul>
+						<ul class="nav navbar-nav">
+							<li class="active"><a href="index.jsp">Home</a></li>
+							<li><a href="about.jsp">About</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
+                            <li><a href="login.jsp">Manage</a></li>
+						</ul>
 					  </div>
 				  </div>
 			  </nav>
@@ -97,25 +94,25 @@
   <div class="pogoSlider" id="js-main-slider">
 	  <div class="pogoSlider-slide" data-transition="verticalSlide" data-duration="1000"  style="background-image:url(images/banner1.jpg);">
 		  <div class="pogoSlider-slide-element">
-			  <h3>第一张图片背景文字</h3>
+			  <h3>Search anytime and anywhere</h3>
 			  <a href="about.html" class="link1">Read More</a>
 		  </div>
 	  </div>
 	  <div class="pogoSlider-slide " data-transition="blocksReveal" data-duration="1000"  style="background-image:url(images/banner2.jpg);">
 		  <div class="pogoSlider-slide-element">
-			  <h3>第二张图片背景文字</h3>
+			  <h3>Find background information</h3>
 			  <a href="about.html" class="link1">Read More</a>
 		  </div>
 	  </div>
 	  <div class="pogoSlider-slide " data-transition="barRevealDown" data-duration="1000"  style="background-image:url(images/banner3.jpg);">
 		  <div class="pogoSlider-slide-element">
-			  <h3>第三张图片背景文字</h3>
+			  <h3>Remind the surrounding events</h3>
 			  <a href="about.html" class="link1">Read More</a>
 		  </div>
 	  </div>
 	  <div class="pogoSlider-slide " data-transition="shrinkReveal" data-duration="1000"  style="background-image:url(images/banner4.jpg);">
 		  <div class="pogoSlider-slide-element">
-			  <h3>第四张图片背景文字</h3>
+			  <h3>Create events to attract others</h3>
 			  <a href="about.html" class="link1">Read More</a>
 		  </div>
 	  </div>
@@ -126,44 +123,22 @@
 	  <div class="container">
 		  <div class="wel-w3ls">
 			  <h3 class="text-center w3layouts w3 w3l w3ls">Welcome To Our Business</h3>
-			  <p class="text-center w3layouts w3 w3l w3ls">项目介绍</p>
+			  <p class="text-center w3layouts w3 w3l w3ls">Project Introduction</p>
 		  </div>
 	  </div>
   </section>
   <!-- /welcome section -->
-  <!-- info section -->
-  <section class="info">
-	  <div class="container">
-		  <div class="row">
-			  <div class="col-lg-5 col-md-5 info-w3ls1">
-				  <p class="text-center w3layouts w3 w3l w3ls">这里是视频</p>
-				  <a class="wmBox" href="#" data-popup="https://player.vimeo.com/video/33812159?title=0&byline=0&portrait=0">
-					  <img src="images/info-img.jpg" alt="w3layouts" title="w3layouts" class="img-responsive">
-					  <div class="b-wrapper">
-						  <i class="fa fa-play-circle-o" aria-hidden="true"></i>
-					  </div>
-				  </a>
-			  </div>
-			  <div class="col-lg-7 col-md-7 info-w3ls2">
-				  <div class="info-agile">
-					  <h2>视频</h2>
-					  <p>视频介绍</p>
-				  </div>
-			  </div>
-		  </div>
-	  </div>
-  </section>
-  <!-- info section -->
+ 
   <!-- team section -->
   <section class="team">
 	  <div class="container">
 		  <h3 class="text-center agileits agileinfo wthree w3-agileits">Our Amazing Team</h3>
-		  <p class="text-center agileits agileinfo wthree w3-agileits">一句话公司格言</p>
+		  <p class="text-center agileits agileinfo wthree w3-agileits">Find events surrounding you</p>
 		  <div class="row">
 			  <div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
 				  <div class="grid">
 					  <figure class="effect-julia">
-						  <！--img src="images/team-img1.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
+						  <img src="images/team-img1.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
 						  <figcaption>
 							  <div>
 								  <ul class="social-icons2">
@@ -178,12 +153,12 @@
 					  </figure>
 				  </div>
 				  <h4 class="text-center">LI Shuopu</h4>
-				  <p class="team-p1">Founder</p>
+				  <p class="team-p1">Technical Manager</p>
 			  </div>
 			  <div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
 				  <div class="grid">
 					  <figure class="effect-julia">
-						  <！--img src="images/team-img2.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
+						  <img src="images/team-img2.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
 						  <figcaption>
 							  <div>
 								  <ul class="social-icons2">
@@ -198,12 +173,12 @@
 					  </figure>
 				  </div>
 				  <h4 class="text-center">WANG Shijun</h4>
-				  <p class="team-p1">Company Technology Manager</p>
+				  <p class="team-p1">PM</p>
 			  </div>
 			  <div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
 				  <div class="grid">
 					  <figure class="effect-julia">
-						  <！--img src="images/team-img3.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
+						  <img src="images/team-img3.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
 						  <figcaption>
 							  <div>
 								  <ul class="social-icons2">
@@ -218,12 +193,12 @@
 					  </figure>
 				  </div>
 				  <h4 class="text-center">YANG Miao</h4>
-				  <p class="team-p1">自定义职位</p>
+				  <p class="team-p1">Front-end Developer</p>
 			  </div>
 			  <div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
 				  <div class="grid">
 					  <figure class="effect-julia">
-						  <！--img src="images/team-img3.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
+						  <img src="images/team-img4.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
 						  <figcaption>
 							  <div>
 								  <ul class="social-icons2">
@@ -238,12 +213,12 @@
 					  </figure>
 				  </div>
 				  <h4 class="text-center">SHI Haoting</h4>
-				  <p class="team-p1">自定义职位</p>
+				  <p class="team-p1">Database Manager</p>
 			  </div>
 			  <div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
 				  <div class="grid">
 					  <figure class="effect-julia">
-						  <！--img src="images/team-img3.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
+						  <img src="images/team-img5.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
 						  <figcaption>
 							  <div>
 								  <ul class="social-icons2">
@@ -258,12 +233,12 @@
 					  </figure>
 				  </div>
 				  <h4 class="text-center">HUO Peiqi</h4>
-				  <p class="team-p1">自定义职位</p>
+				  <p class="team-p1">Back-end Developer</p>
 			  </div>
 			  <div class="col-lg-3 col-md-3 col-sm-6 team-w3ls">
 				  <div class="grid">
 					  <figure class="effect-julia">
-						  <！--img src="images/team-img4.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
+						  <img src="images/team-img6.jpg" alt="w3layouts" class="img-responsive" title="w3layouts"/>
 						  <figcaption>
 							  <div>
 								  <ul class="social-icons2">
@@ -278,7 +253,7 @@
 					  </figure>
 				  </div>
 				  <h4 class="text-center">XING Jiaji</h4>
-				  <p class="team-p1">自定义职位</p>
+				  <p class="team-p1">Design Manager</p>
 			  </div>
 		  </div>
 	  </div>
@@ -565,16 +540,12 @@
 		  <div class="row">
 			  <div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls1">
 				  <ul class="footer-links1 cl-effect-4">
-					  <li><a href="about.html">About</a></li>
-					  <li><a href="eventgo">EventGo</a></li>
-					  <li><a href="mysql">MySQL</a></li>
+					  <li><a href="about.jsp">About</a></li>
 				  </ul>
 			  </div>
 			  <div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls2">
 				  <ul class="footer-links2 cl-effect-4">
-					  <li><a href="test">Test</a></li>
-					  <li><a href="blog.html">Blog</a></li>
-					  <li><a href="contact.html">Contact</a></li>
+					  <li><a href="contact.jsp">Contact</a></li>
 				  </ul>
 			  </div>
 		  </div>

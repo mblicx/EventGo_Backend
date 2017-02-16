@@ -1,34 +1,43 @@
 package com.efrei.eventGo;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-
 @SuppressWarnings("serial")
-public class GetEventsServlet extends HttpServlet {
-	@Override
+
+public class AddUserServlet extends HttpServlet {
+
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		this.doPost(req, resp);
 
-		final String selectSql = "select * from event natural join type natural join place";
+	}
 
-		PrintWriter out = resp.getWriter();
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
+		// final String selectSql = "select * from event natural join type
+		// natural join place";
+		final String addSql = "INSERT INTO user (user_name, user_code, user_type) VALUES (?, ?, ?) ";
+		// final String testAddSql = "INSERT INTO test1 (u_id, e_name, Date)
+		// VALUES (?, ?, ?) ";
+		// final String testSelectSql = "select e_name from test1";
+
+		// PrintWriter out = resp.getWriter();
 		resp.setContentType("text/plain");
 		String url;
+
+		String man_id = req.getParameter("manager_id");
+		String name = req.getParameter("user_name");
+		String code = req.getParameter("user_code");
+		String type = req.getParameter("user_type");
+
 		if (System.getProperty("com.google.appengine.runtime.version").startsWith("Google App Engine/")) {
 			// Check the System properties to determine if we are running on
 			// appengine or not
@@ -50,25 +59,30 @@ public class GetEventsServlet extends HttpServlet {
 		}
 		log("connecting to: " + url);
 
-		try (Connection conn = DriverManager.getConnection(url);
-				ResultSet rs = conn.prepareStatement(selectSql).executeQuery()) {
+		try (Connection conn = DriverManager.getConnection(url);) {
 
-			List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-			ResultSetMetaData md = rs.getMetaData();
-			int columnCount = md.getColumnCount();
-			while (rs.next()) {
-				Map<String, Object> rowData = new HashMap<String, Object>();
-				for (int i = 1; i <= columnCount; i++) {
-					rowData.put(md.getColumnName(i), rs.getObject(i));
-				}
-				list.add(rowData);
-			}
-			Gson gson = new Gson();
-			String s2 = gson.toJson(list);
-			out.print(s2);
+			// PreparedStatement psAdd = conn.prepareStatement(testAddSql);
+
+			PreparedStatement pstmt = conn.prepareStatement(addSql);
+
+			// psAdd.setInt(1, id);
+			// psAdd.setString(2, name);
+			// psAdd.setString(3, nstart_date);
+
+			pstmt.setString(1, name);
+			pstmt.setString(2, code);
+			pstmt.setString(3, type);
+
+			pstmt.executeUpdate();
+			// psAdd.executeUpdate();
+			// out.print("SUCCESS");
+			req.setAttribute("info", "alreadu added!");
+
+			resp.sendRedirect("ManageEvents.jsp?uid=" + man_id);
 
 		} catch (SQLException e) {
 			throw new ServletException("SQL error", e);
 		}
+
 	}
 }

@@ -5,42 +5,89 @@ xmlns:web="http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd"
 xsi:schemaLocation="http://java.sun.com/xml/ns/javaee
 http://java.sun.com/xml/ns/javaee/web-app_2_5.xsd" version="2.5">
 	<servlet>
-		<servlet-name>EventGo</servlet-name>
-		<servlet-class>com.efrei.eventGo.EventGoServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>EventGo</servlet-name>
-		<url-pattern>/eventgo</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>MySQL</servlet-name>
-		<servlet-class>com.efrei.eventGo.MySQLServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>MySQL</servlet-name>
-		<url-pattern>/mysql</url-pattern>
-	</servlet-mapping>
-
-	<servlet>
-		<servlet-name>NoSQLServlet</servlet-name>
-		<servlet-class>com.efrei.eventGo.NoSQLServlet</servlet-class>
-	</servlet>
-	<servlet-mapping>
-		<servlet-name>NoSQLServlet</servlet-name>
-		<url-pattern>/nosql</url-pattern>
-	</servlet-mapping>
-	
-	<servlet>
-		<servlet-name>GetEventsServlet</servlet-name>
+		<servlet-name>GetEvents</servlet-name>
 		<servlet-class>com.efrei.eventGo.GetEventsServlet</servlet-class>
 	</servlet>
 	<servlet-mapping>
-		<servlet-name>GetEventsServlet</servlet-name>
+		<servlet-name>GetEvents</servlet-name>
 		<url-pattern>/getevents</url-pattern>
 	</servlet-mapping>
 	
+	<servlet>
+		<servlet-name>AddServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.AddServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddServlet</servlet-name>
+		<url-pattern>/AddServlet</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>UpdateServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.UpdateServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateServlet</servlet-name>
+		<url-pattern>/UpdateServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddPlaceServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.AddPlaceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddPlaceServlet</servlet-name>
+		<url-pattern>/AddPlaceServlet</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>UpdatePlaceServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.UpdatePlaceServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdatePlaceServlet</servlet-name>
+		<url-pattern>/UpdatePlaceServlet</url-pattern>
+	</servlet-mapping>
+	
+	<servlet>
+		<servlet-name>AddUserServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.AddUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>AddUserServlet</servlet-name>
+		<url-pattern>/AddUserServlet</url-pattern>
+	</servlet-mapping>
+	
+		<servlet>
+		<servlet-name>UpdateUserServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.UpdateUserServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>UpdateUserServlet</servlet-name>
+		<url-pattern>/UpdateUserServlet</url-pattern>
+	</servlet-mapping>
+	
+	
+	 	<servlet>
+		<servlet-name>LoginServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.LoginServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LoginServlet</servlet-name>
+		<url-pattern>/LoginServlet</url-pattern>
+	</servlet-mapping>
+
+	
+	<servlet>
+		<servlet-name>LogupServlet</servlet-name>
+		<servlet-class>com.efrei.eventGo.LogupServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>LogupServlet</servlet-name>
+		<url-pattern>/LogupServlet</url-pattern>
+	</servlet-mapping>
+	
 	<welcome-file-list>
-		<welcome-file>index.html</welcome-file>
+		<welcome-file>index.jsp</welcome-file>
 	</welcome-file-list>
 </web-app>

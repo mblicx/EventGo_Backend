@@ -1,13 +1,13 @@
-<!--
-Author: W3layouts
-Author URL: http://w3layouts.com
-License: Creative Commons Attribution 3.0 Unported
-License URL: http://creativecommons.org/licenses/by/3.0/
--->
-<!DOCTYPE html>
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN">
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+    pageEncoding="UTF-8"%>
+<%@ page import="java.io.*,java.util.*,java.sql.*"%>
+<%@ page import="javax.servlet.http.*,javax.servlet.*" %>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/sql" prefix="sql"%>
 <html>
 <head>
-<title>Terrain a Real Estates and Builders Category Flat bootstrap Responsive website Template | Contact :: w3layouts</title>
+<title>Event-Go | Contact :: w3layouts</title>
 <!--mobile apps-->
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
@@ -38,7 +38,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="container">
 			<div class="row">
 				<div class="col-lg-7 col-md-7 top-w3ls1">
-					<p class="top-p1">Find events surrounding you(随便写写标语什么的)</p>
+				  <p class="top-p1">Find events surrounding you </p>
 				</div>
 				<div class="col-lg-5 col-md-5 top-w3ls2">
 					<ul class="top-contacts">
@@ -66,14 +66,10 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.html">Home</a></li>
-							<li><a href="about.html">About</a></li>
-							<li><a href="eventgo">EventGo</a></li>
-							<li><a href="mysql">MySQL</a></li>
-							<li><a href="test">Test</a></li>
-							<li><a href="blog.html">Blog</a></li>
-							<li><a href="contact.html">Contact</a></li>
-
+							<li class="active"><a href="index.jsp">Home</a></li>
+							<li><a href="about.jsp">About</a></li>
+							<li><a href="contact.jsp">Contact</a></li>
+                            <li><a href="login.jsp">Manage</a></li>
 						</ul>
 					</div>
 				</div>
@@ -104,7 +100,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
             <div class="col-lg-12">
                 <h2 class="page-header">Contact Us</h2>
                 <ol class="breadcrumb">
-                    <li><a href="index.html">Home</a>
+                    <li><a href="index.jsp">Home</a>
                     </li>
                     <li class="active">Contact</li>
                 </ol>
@@ -123,7 +119,6 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 <section class="contact-w3ls">
 	<div class="container">
 		<h3 class="text-center w3layouts w3 w3l w3ls agileits agileinfo wthree w3-agileits">Write To Us</h3>
-		<p class="text-center w3layouts w3 w3l w3ls agileits agileinfo wthree w3-agileits">公司一句话标语</p>
 		<div class="row">
 			<form action="#" method="post" name="sentMessage" id="contactForm" novalidate>
                 <div class="col-lg-6 col-md-6 col-sm-6 contact-agile1">    
@@ -177,7 +172,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="contact-grid1-left1">
 					<span class="glyphicon glyphicon-envelope" aria-hidden="true"></span>
 					<h4>Contact By Email</h4>
-					<p>我也不知道这里应该写什么？？尽快跟您联系？</p>
+					<p>If you have any questions don't hesitate to contact us!</p>
 					<ul>
 						<li>Mail1: <a href="mailto:info@example.com">contact1@eventgo.com</a></li>
 						<li>Mail2: <a href="mailto:info@example.com">contact2@eventgo.com</a></li>
@@ -188,7 +183,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="contact-grid1-left1">
 					<span class="glyphicon glyphicon-earphone" aria-hidden="true"></span>
 					<h4>Contact By Phone</h4>
-					<p>我也不知道这里应该写什么？？尽快跟您联系？</p>
+					<p>If you have any questions don't hesitate to contact us!</p>
 					<ul>
 						<li>Phone: +33 665111111</li>
 						<li>Fax:+33 665111111</li>
@@ -199,7 +194,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 				<div class="contact-grid1-left1">
 					<span class="glyphicon glyphicon-home" aria-hidden="true"></span>
 					<h4>Looking For Address</h4>
-					<p>我也不知道这里应该写什么？？尽快跟您联系？</p>
+					<p>If you have any questions don't hesitate to contact us!</p>
 					<ul>
 						<li>Address: 30-32 Avenue de la Republique</li>
 						<li>Villejuif, France.</li>
@@ -221,16 +216,12 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls1">
 				<ul class="footer-links1 cl-effect-4">
-					<li><a href="about.html">About</a></li>
-					<li><a href="eventgo">EventGo</a></li>
-					<li><a href="mysql">MySQL</a></li>
+					<li><a href="about.jsp">About</a></li>
 				</ul>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls2">
 				<ul class="footer-links2 cl-effect-4">
-					<li><a href="test">Test</a></li>
-					<li><a href="blog.html">Blog</a></li>
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="contact.jsp">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -240,7 +231,7 @@ License URL: http://creativecommons.org/licenses/by/3.0/
 			<li><a href="#"><i class="fa fa-whatsapp"></i></a></li>
 			<li><a href="#"><i class="fa fa-youtube"></i></a></li>
 		</ul>
-		<p class="copyright">&copy; 2016 Event-Go. All rights reserved | Design by PA6 Team</a></p>
+		<p class="copyright">&copy; 2017 Event-Go. All rights reserved | Design by PA6 Team</p>
 	</div>
 </section>
 <!-- /footer section -->

@@ -4,30 +4,32 @@ import java.io.IOException;
 import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
+import java.sql.PreparedStatement;
 import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-
 @SuppressWarnings("serial")
-public class GetEventsServlet extends HttpServlet {
+public class LoginServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		this.doPost(req, resp);
+	}
 
-		final String selectSql = "select * from event natural join type natural join place";
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+
+		final String selectSql = "select user_id from user where user_name=? and user_code=?";
 
 		PrintWriter out = resp.getWriter();
 		resp.setContentType("text/plain");
+
+		String name = req.getParameter("user_name");
+		String code = req.getParameter("password");
+		int id;
+
 		String url;
 		if (System.getProperty("com.google.appengine.runtime.version").startsWith("Google App Engine/")) {
 			// Check the System properties to determine if we are running on
@@ -50,25 +52,31 @@ public class GetEventsServlet extends HttpServlet {
 		}
 		log("connecting to: " + url);
 
-		try (Connection conn = DriverManager.getConnection(url);
-				ResultSet rs = conn.prepareStatement(selectSql).executeQuery()) {
+		try (Connection conn = DriverManager.getConnection(url);) {
+			PreparedStatement pstmt = conn.prepareStatement(selectSql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, code);
+			ResultSet rs = pstmt.executeQuery();
 
-			List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-			ResultSetMetaData md = rs.getMetaData();
-			int columnCount = md.getColumnCount();
-			while (rs.next()) {
-				Map<String, Object> rowData = new HashMap<String, Object>();
-				for (int i = 1; i <= columnCount; i++) {
-					rowData.put(md.getColumnName(i), rs.getObject(i));
+			if (rs.next()) {
+				id = rs.getInt(1);
+				if (id == 1) {
+					req.setAttribute("info", id);
+					resp.sendRedirect("ManageEvents.jsp?uid=" + id);
+
+				} else {
+					req.setAttribute("info", id);
+					resp.sendRedirect("ShowEvent.jsp?uid=" + id);
 				}
-				list.add(rowData);
-			}
-			Gson gson = new Gson();
-			String s2 = gson.toJson(list);
-			out.print(s2);
 
+			} else {
+				out.print(
+						"<script language=javascript>alert('user_name or password is WRONG');history.go(-1);</script>");
+				// resp.sendRedirect("login.jsp");
+			}
 		} catch (SQLException e) {
 			throw new ServletException("SQL error", e);
 		}
 	}
+
 }

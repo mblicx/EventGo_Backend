@@ -1,33 +1,35 @@
 package com.efrei.eventGo;
 
 import java.io.IOException;
-import java.io.PrintWriter;
+//import java.io.PrintWriter;
 import java.sql.Connection;
 import java.sql.DriverManager;
-import java.sql.ResultSet;
-import java.sql.ResultSetMetaData;
+import java.sql.PreparedStatement;
 import java.sql.SQLException;
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
-
 import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-import com.google.gson.Gson;
-
 @SuppressWarnings("serial")
-public class GetEventsServlet extends HttpServlet {
+public class LogupServlet extends HttpServlet {
 	@Override
 	public void doGet(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
+		this.doPost(req, resp);
+	}
 
-		final String selectSql = "select * from event natural join type natural join place";
+	public void doPost(HttpServletRequest req, HttpServletResponse resp) throws IOException, ServletException {
 
-		PrintWriter out = resp.getWriter();
+		final String addSql = "INSERT INTO user (user_name, user_code, user_type) VALUES (?, ?, ?) ";
+
+		// PrintWriter out = resp.getWriter();
 		resp.setContentType("text/plain");
+
+		String name = req.getParameter("user_name");
+		String code = req.getParameter("password");
+		String type = req.getParameter("user_type");
+		// int id;
+
 		String url;
 		if (System.getProperty("com.google.appengine.runtime.version").startsWith("Google App Engine/")) {
 			// Check the System properties to determine if we are running on
@@ -50,22 +52,15 @@ public class GetEventsServlet extends HttpServlet {
 		}
 		log("connecting to: " + url);
 
-		try (Connection conn = DriverManager.getConnection(url);
-				ResultSet rs = conn.prepareStatement(selectSql).executeQuery()) {
+		try (Connection conn = DriverManager.getConnection(url);) {
+			PreparedStatement pstmt = conn.prepareStatement(addSql);
+			pstmt.setString(1, name);
+			pstmt.setString(2, code);
+			pstmt.setString(3, type);
+			pstmt.executeUpdate();
 
-			List<Map<String, Object>> list = new ArrayList<Map<String, Object>>();
-			ResultSetMetaData md = rs.getMetaData();
-			int columnCount = md.getColumnCount();
-			while (rs.next()) {
-				Map<String, Object> rowData = new HashMap<String, Object>();
-				for (int i = 1; i <= columnCount; i++) {
-					rowData.put(md.getColumnName(i), rs.getObject(i));
-				}
-				list.add(rowData);
-			}
-			Gson gson = new Gson();
-			String s2 = gson.toJson(list);
-			out.print(s2);
+			req.setAttribute("info", "success");
+			resp.sendRedirect("login.jsp");
 
 		} catch (SQLException e) {
 			throw new ServletException("SQL error", e);
