@@ -84,7 +84,7 @@
 							class="icon-bar"></span> <span class="icon-bar"></span> <span
 							class="icon-bar"></span>
 					</button>
-					<a class="navbar-brand" href="index.html"><h1>Event-Go</h1></a>
+					<a class="navbar-brand" href="index.jsp"><h1>Event-Go</h1></a>
 				</div>
 				<div id="navbar" class="navbar-collapse collapse">
 					<ul class="nav navbar-nav">
@@ -261,17 +261,17 @@ SELECT user_name from user WHERE user_id=?;
 	<!-- footer section -->
 	<section class="footer"> <a href="#myPage" title="To Top"
 		class="top"> <span class="glyphicon glyphicon-chevron-up"></span>
-	</a> <a href="index.html" class="logo">Event-Go</a>
+	</a> <a href="index.jsp" class="logo">Event-Go</a>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls1">
 				<ul class="footer-links1 cl-effect-4">
-					<li><a href="about.html">About</a></li>
+					<li><a href="about.jsp">About</a></li>
 				</ul>
 			</div>
 			<div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls2">
 				<ul class="footer-links2 cl-effect-4">
-					<li><a href="contact.html">Contact</a></li>
+					<li><a href="contact.jsp">Contact</a></li>
 				</ul>
 			</div>
 		</div>
@@ -295,7 +295,7 @@ SELECT user_name from user WHERE user_id=?;
 	<!-- footer section -->
 	<section class="footer"> <a href="#myPage" title="To Top"
 		class="top"> <span class="glyphicon glyphicon-chevron-up"></span>
-	</a> <a href="index.html" class="logo">Event-Go</a>
+	</a> <a href="index.jsp" class="logo">Event-Go</a>
 	<div class="container">
 		<div class="row">
 			<div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls1">

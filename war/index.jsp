@@ -65,7 +65,7 @@
 							  <span class="icon-bar"></span>
 							  <span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="index.html"><h1>Event-Go</h1></a>
+						  <a class="navbar-brand" href="index.jsp"><h1>Event-Go</h1></a>
 					  </div>
 					  <div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
@@ -95,25 +95,25 @@
 	  <div class="pogoSlider-slide" data-transition="verticalSlide" data-duration="1000"  style="background-image:url(images/banner1.jpg);">
 		  <div class="pogoSlider-slide-element">
 			  <h3>Search anytime and anywhere</h3>
-			  <a href="about.html" class="link1">Read More</a>
+			  <a href="about.jsp" class="link1">Read More</a>
 		  </div>
 	  </div>
 	  <div class="pogoSlider-slide " data-transition="blocksReveal" data-duration="1000"  style="background-image:url(images/banner2.jpg);">
 		  <div class="pogoSlider-slide-element">
 			  <h3>Find background information</h3>
-			  <a href="about.html" class="link1">Read More</a>
+			  <a href="about.jsp class="link1">Read More</a>
 		  </div>
 	  </div>
 	  <div class="pogoSlider-slide " data-transition="barRevealDown" data-duration="1000"  style="background-image:url(images/banner3.jpg);">
 		  <div class="pogoSlider-slide-element">
 			  <h3>Remind the surrounding events</h3>
-			  <a href="about.html" class="link1">Read More</a>
+			  <a href="about.jsp" class="link1">Read More</a>
 		  </div>
 	  </div>
 	  <div class="pogoSlider-slide " data-transition="shrinkReveal" data-duration="1000"  style="background-image:url(images/banner4.jpg);">
 		  <div class="pogoSlider-slide-element">
 			  <h3>Create events to attract others</h3>
-			  <a href="about.html" class="link1">Read More</a>
+			  <a href="about.jsp" class="link1">Read More</a>
 		  </div>
 	  </div>
   </div>
@@ -535,7 +535,7 @@
 	  <a href="#myPage" title="To Top" class="top">
 		  <span class="glyphicon glyphicon-chevron-up"></span>
 	  </a>
-	  <a href="index.html" class="logo">Event-Go</a>
+	  <a href="index.jsp" class="logo">Event-Go</a>
 	  <div class="container">
 		  <div class="row">
 			  <div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls1">
