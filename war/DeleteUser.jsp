@@ -133,8 +133,8 @@ if(uid.equals("1")){
                         <td><c:out value="${row.user_code}"/></td>  
                         <td><c:out value="${row.user_type}"/></td>
                         <td>
-                        <a href="UpdateUser.jsp?nuid=${row.user_id}uid=<%=uid%>">UPDATE</a>
-                        <a href="DeleteUser.jsp?nuid=${row.user_id}uid=<%=uid%>" onclick="return confirm('are you sure?')">DELETE</a>  
+                        <a href="UpdateUser.jsp?nuid=${row.user_id}&uid=<%=uid%>">UPDATE</a>
+                        <a href="DeleteUser.jsp?nuid=${row.user_id}&uid=<%=uid%>" onclick="return confirm('are you sure?')">DELETE</a>  
  						</td>
                     </tr>  
                 </c:forEach>
