@@ -130,6 +130,7 @@
   <!-- /welcome section -->
  
   <!-- team section -->
+
   <section class="team">
 	  <div class="container">
 		  <h3 class="text-center agileits agileinfo wthree w3-agileits">Our Amazing Team</h3>

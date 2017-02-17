@@ -76,7 +76,7 @@ if(uid.equals("1")){
 							  <span class="icon-bar"></span>
 							  <span class="icon-bar"></span>
 						  </button>
-						  <a class="navbar-brand" href="index.html"><h1>Event-Go</h1></a>
+						  <a class="navbar-brand" href="index.jsp"><h1>Event-Go</h1></a>
 					  </div>
 					  <div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
@@ -149,7 +149,7 @@ if(uid.equals("1")){
 	  <a href="#myPage" title="To Top" class="top">
 		  <span class="glyphicon glyphicon-chevron-up"></span>
 	  </a>
-	  <a href="index.html" class="logo">Event-Go</a>
+	  <a href="index.jsp" class="logo">Event-Go</a>
 	  <div class="container">
 		  <div class="row">
 			  <div class="col-lg-6 col-md-6 col-sm-6 footer-w3ls1">

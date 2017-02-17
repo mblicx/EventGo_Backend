@@ -66,8 +66,8 @@
 					</div>
 					<div id="navbar" class="navbar-collapse collapse">
 						<ul class="nav navbar-nav">
-							<li class="active"><a href="index.jsp">Home</a></li>
-							<li><a href="about.jsp">About</a></li>
+							<li><a href="index.jsp">Home</a></li>
+							<li class="active"><a href="about.jsp">About</a></li>
 							<li><a href="contact.jsp">Contact</a></li>
                             <li><a href="login.jsp">Manage</a></li>
 						</ul>
@@ -130,7 +130,7 @@
         <!-- /.row -->
 	</div>
 </section>
-<!-- /about section -->	
+<!-- /about section -->
 <!-- team section -->
 <section class="team" style="background-color:#eb5425;">
 	<div class="container">

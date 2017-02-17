@@ -72,7 +72,7 @@
 							<li><a href="index.jsp">Home</a></li>
 							<li><a href="about.jsp">About</a></li>
 							<li><a href="contact.jsp">Contact</a></li>
-                            <li><a href="login.jsp">Manage</a></li>
+                            <li class="active"><a href="login.jsp">Manage</a></li>
 						</ul>
 					  </div>
 				  </div>
