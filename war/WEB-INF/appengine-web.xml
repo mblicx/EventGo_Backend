@@ -5,15 +5,11 @@
 
   <threadsafe>true</threadsafe>
 
-  
-  
   <!-- Configure java.util.logging -->
   <system-properties>
     <property name="java.util.logging.config.file" value="WEB-INF/logging.properties"/>
     <property name="ae-cloudsql.cloudsql-database-url" value="jdbc:google:mysql://eventgo-161225:europe-west1:eventgosql/eventgo?user=root&amp;password=kid1412" />
     <property name="ae-cloudsql.local-database-url" value="jdbc:mysql://google/eventgo?cloudSqlInstance=eventgo-161225:europe-west1:eventgosql&amp;socketFactory=com.google.cloud.sql.mysql.SocketFactory&amp;user=root&amp;password=kid1412&amp;useSSL=false" />
   </system-properties>
-
-
 
 </appengine-web-app>
