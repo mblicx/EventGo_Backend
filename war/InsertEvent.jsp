@@ -28,7 +28,23 @@ if(uid.equals("1")){
 	  <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	  <meta name="keywords" content="Terrain Responsive web template, Bootstrap Web Templates, Flat Web Templates, Android Compatible web template,
 	Smartphone Compatible web template, free webdesigns for Nokia, Samsung, LG, SonyEricsson, Motorola web design" />
-	  <script type="application/x-javascript"> addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false); function hideURLbar(){ window.scrollTo(0,1); } </script>
+	  <script type="application/x-javascript"> 
+	  addEventListener("load", function() { setTimeout(hideURLbar, 0); }, false);
+	  function hideURLbar(){ window.scrollTo(0,1); }; 
+	  function timeC(){
+		    var a=document.getElementById("start_date");
+		    var c=document.getElementById("end_date");
+		    var d=document.getElementById("start_time");
+		    var e=document.getElementById("end_time");
+		    var b=document.getElementById("btn");
+		    if(a.value>=c.value||d.value>=e.value)
+		    {
+		       	alert("End date/time can't before the start!");
+		        return false;
+		    }
+		    return true;
+		    };
+		</script>
 	  <!-- fonts -->
 	  <link href='//fonts.googleapis.com/css?family=Ubuntu+Condensed' rel='stylesheet' type='text/css'>
 	  <link href='//fonts.googleapis.com/css?family=Titillium+Web:400,200,300,600,700,900' rel='stylesheet' type='text/css'>
@@ -114,7 +130,7 @@ SELECT place_id,address from place;
 <section class="contact-w3ls">
 	<div class="container">
 		<h3 class="text-center w3layouts w3 w3l w3ls agileits agileinfo wthree w3-agileits">Insert events</h3>
-<form action="AddServlet" method="post" novalidate>	
+<form action="AddServlet" onsubmit="return timeC();" method="post" novalidate>
 				<table border="1" bordercolor="#EB5425" align=center> 
 					<tr>
 						<td>User_id:</td><td><input type="text" name="user_id" class="form-control"
@@ -131,21 +147,20 @@ SELECT place_id,address from place;
                 	</c:forEach>
 					</select>
 	  				</td>  
-					</tr>
 					<tr>
-						<td>Start_date:</td><td><input type="date" name="start_date" class="form-control" required data-validation-required-message="Please enter start date."
+						<td>Start_date:</td><td><input type="date" id="start_date" name="start_date" class="form-control" required data-validation-required-message="Please enter start date."
 							style='font-size:18px' width=200/></td>
 					</tr>
 					<tr>
-						<td>End_date</td><td><input type="date" name="end_date" class="form-control" required data-validation-required-message="Please enter end date."
+						<td>End_date</td><td><input type="date"  id="end_date" name="end_date" class="form-control" required data-validation-required-message="Please enter end date."
 							style='font-size:18px'/></td>
 					</tr>
 					<tr>
-						<td>Start_time:</td><td><input type="time" name="start_time" step="10" class="form-control" required data-validation-required-message="Please enter start time."
+						<td>Start_time:</td><td><input type="time" id="start_time" name="start_time" step="10" class="form-control" required data-validation-required-message="Please enter start time."
 							style='font-size:18px' width=200/></td>
 					</tr>
 					<tr>
-						<td>End_time</td><td><input type="time" name="end_time" step="10" class="form-control" required data-validation-required-message="Please enter end time."
+						<td>End_time</td><td><input type="time" id="end_time" name="end_time" step="10" class="form-control" required data-validation-required-message="Please enter end time."
 							style='font-size:18px'/></td>
 					</tr>
 					<tr>
@@ -172,9 +187,8 @@ SELECT place_id,address from place;
 						<td>Icon:</td><td><input type="file" name="icon" accept="image/*" class="form-control"
 							style='font-size:18px'/></td>
 					</tr>
-					
 					<tr>
-						<td colspan=2 align=center><input type="submit" name="Submit" 
+						<td colspan=2 align=center><input id="btn" type="submit" name="Submit" onclick="timeC();"
 							value="ADD" style='font-size:18px' width=200/></td>
 					</tr>
 				</table>
